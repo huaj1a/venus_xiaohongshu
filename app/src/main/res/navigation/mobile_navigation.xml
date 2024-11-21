@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.venus.xiaohongshu.ui.home.HomeFragment"
+        android:label="home" />
+
+    <fragment
+        android:id="@+id/navigation_shop"
+        android:name="com.venus.xiaohongshu.ui.shop.ShopFragment"
+        android:label="shop" />
+
+    <fragment
+        android:id="@+id/navigation_message"
+        android:name="com.venus.xiaohongshu.ui.message.MessageFragment"
+        android:label="message"/>
+
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.venus.xiaohongshu.ui.mine.MineFragment"
+        android:label="mine"/>
+
+</navigation>
