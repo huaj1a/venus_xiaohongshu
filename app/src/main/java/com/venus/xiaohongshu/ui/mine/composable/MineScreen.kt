@@ -1,6 +1,5 @@
 package com.venus.xiaohongshu.ui.mine.composable
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,7 +28,6 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.venus.xiaohongshu.app.TAG
 import com.venus.xiaohongshu.ui.mine.viewmodel.MineViewModel
 
 /**
@@ -60,8 +58,6 @@ fun MineScreen() {
     val nestedScrollConnection = object : NestedScrollConnection {
         // 子View将要滚动时会触发此回调，返回值是父组件需要消耗的滚动值
         override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
-            Log.i(TAG, "scrollIntercept: $scrollIntercept")
-            Log.i(TAG, "available: $available")
             if (scrollIntercept && available.y < 0) {
                 scrollState.dispatchRawDelta(-available.y)
                 return available

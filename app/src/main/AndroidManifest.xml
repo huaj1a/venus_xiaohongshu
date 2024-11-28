@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
@@ -26,6 +33,8 @@
         </activity>
         <activity android:name=".ui.publish.PublishActivity"/>
         <activity android:name=".ui.search.SearchActivity"/>
+        <activity android:name=".activity.graphic.GraphicActivity"/>
+        <activity android:name=".activity.video.VideoActivity"/>
     </application>
 
 </manifest>

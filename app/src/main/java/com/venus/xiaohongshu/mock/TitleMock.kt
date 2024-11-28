@@ -50,11 +50,49 @@ object TitleMock {
         "谷歌 Pixel 6"
     )
     
+    private val hotspotTitleList = listOf(
+        "余承东：发布会结束有人给我转了6万",
+        "提前还房贷的人后悔了吗",
+        "北京突然飘雪 专家：大力出奇迹",
+        "寒潮≠冷空气？“冷知识”了解一下",
+        "高以翔去世5周年 墓地摆满鲜花",
+        "92岁奶奶比29不到的我气血还足",
+        "以色列批准黎以停火协议",
+        "谷子经济彻底火了",
+        "网红道歉合集：表情话术一模一样",
+        "上海浦东新区区委书记朱芝松被查",
+        "#北京飘雪了#",
+        "13岁学生离家失联 警方：发现遗体",
+        "富商去世非婚生女继承总遗产80%",
+        "城管脱衣服光膀打老人？假",
+        "鹤岗暴雪破纪录 乘客雪中推公交",
+        "华为所有新手机将搭载鸿蒙",
+        "华住集团第三季度收入64亿元",
+        "华尔街资深策略师谈美股",
+        "贵州发行7年期地方债",
+        "我国首座海上储气库正式采气",
+        "知乎第三季度营收8.45亿元",
+        "中国经济三季度增长超预期",
+        "NASA发现火星表面存在液态水证据",
+        "全球新冠疫苗接种人数突破80亿",
+        "特斯拉Model Y降价销售引发市场关注",
+        "中国科学家成功克隆出首例基因编辑猪",
+        "苹果公司发布新款iPhone 15 Pro Max",
+        "联合国气候变化大会达成多项共识",
+        "欧洲央行宣布加息应对通胀压力",
+        "北京冬奥会筹备工作进入最后阶段",
+        "SpaceX成功发射首批星链互联网卫星"
+    )
+    
     fun getRandomTitle(): String {
         return titleList[Random.nextInt(titleList.size)]
     }
     
     fun getRandomGoodsTitle(): String {
         return goodsTitleList[Random.nextInt(goodsTitleList.size)]
+    }
+    
+    fun getRandomHotspotTitle(): String {
+        return hotspotTitleList[Random.nextInt(hotspotTitleList.size)]
     }
 }

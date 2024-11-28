@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.venus.xiaohongshu.ui.home.HomeDataRepository
 import com.venus.xiaohongshu.ui.home.bean.GraphicCardBean
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 /**
@@ -19,6 +20,12 @@ class CityViewModel: ViewModel() {
     fun load() {
         viewModelScope.launch {
             cityGraphicCardList.postValue(HomeDataRepository.getCityGraphicCardList())
+        }
+    }
+
+    fun reload(): Job {
+        return viewModelScope.launch {
+            cityGraphicCardList.postValue(HomeDataRepository.getCityGraphicCardList(true))
         }
     }
 }

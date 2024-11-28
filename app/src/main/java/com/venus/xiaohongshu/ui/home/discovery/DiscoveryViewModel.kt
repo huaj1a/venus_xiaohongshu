@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.venus.xiaohongshu.ui.home.HomeDataRepository
 import com.venus.xiaohongshu.ui.home.bean.GraphicCardBean
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 /**
@@ -19,6 +20,12 @@ class DiscoveryViewModel: ViewModel() {
     fun load() {
         viewModelScope.launch {
             graphicCardList.postValue(HomeDataRepository.getGraphicCardList())
+        }
+    }
+
+    fun reload(): Job {
+        return viewModelScope.launch {
+            graphicCardList.postValue(HomeDataRepository.getGraphicCardList(true))
         }
     }
 }

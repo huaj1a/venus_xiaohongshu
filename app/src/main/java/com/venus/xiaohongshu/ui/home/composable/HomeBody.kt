@@ -27,6 +27,7 @@ fun HomeBody(
     ) {
         HorizontalPager(
             state = pagerState,
+            beyondViewportPageCount = 1, // 预加载页数
             modifier = Modifier
                 .fillMaxSize()
         ) { page ->

@@ -1,5 +1,6 @@
 package com.venus.xiaohongshu.ui.home.composable
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -19,12 +20,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.venus.xiaohongshu.R
 import com.venus.xiaohongshu.ui.common.Divider
+import com.venus.xiaohongshu.ui.search.SearchActivity
 import kotlinx.coroutines.launch
 
 /**
@@ -40,6 +43,7 @@ fun HomeTopBar(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val titleList = listOf("关注", "发现", "深圳")
+    val context = LocalContext.current
     Box {
         ConstraintLayout(
             modifier = Modifier.fillMaxWidth()
@@ -112,7 +116,7 @@ fun HomeTopBar(
                     }
                     .padding(end = 16.dp)
                     .clickable {
-
+                        context.startActivity(Intent(context, SearchActivity::class.java))
                     }
             )
             

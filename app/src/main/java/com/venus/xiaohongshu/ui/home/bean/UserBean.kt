@@ -11,5 +11,12 @@ import com.venus.xiaohongshu.R
 data class UserBean(
     val id: String,
     val name: String = "",
-    val image: Int = R.drawable.icon_mine
+    val image: Int = R.drawable.icon_mine,
+    val userInfo: UserInfoBean? = null
+)
+
+data class UserInfoBean(
+    val age: Int = 0,
+    val sex: Int = 0,
+    val address: String = ""
 )

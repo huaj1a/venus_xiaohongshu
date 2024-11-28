@@ -1,6 +1,7 @@
 package com.venus.xiaohongshu.mock
 
 import com.venus.xiaohongshu.R
+import com.venus.xiaohongshu.ui.home.bean.UserInfoBean
 import kotlin.random.Random
 
 /**
@@ -38,6 +39,15 @@ object UserMock {
         R.drawable.p10,
         R.drawable.p11
     )
+    
+    private val userInfoList = listOf(
+        UserInfoBean(age = 18, sex = 1, address = "北京市天安门"),
+        UserInfoBean(age = 22, sex = 1, address = "上海市陆家嘴"),
+        UserInfoBean(age = 23, sex = 0, address = "重庆市"),
+        UserInfoBean(age = 20, sex = 1, address = "广州市珠江新城"),
+        UserInfoBean(age = 36, sex = 0, address = "深圳市深圳湾科技园"),
+        UserInfoBean(age = 30, sex = 1, address = "大理市venus民宿"),
+    )
 
     fun getRandomName(): String {
         return nameList[Random.nextInt(nameList.size)]
@@ -45,6 +55,10 @@ object UserMock {
     
     fun getRandomImage(): Int {
         return imageList[Random.nextInt(imageList.size)]
+    }
+    
+    fun gerRandomUserInfo(): UserInfoBean {
+        return userInfoList[Random.nextInt(userInfoList.size)]
     }
 
 

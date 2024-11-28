@@ -12,6 +12,13 @@ data class GraphicCardBean(
     val id: String = "",
     val title: String = "",
     val image: Int = R.drawable.icon_logo,
+    val video: Int = 0,
     val user: UserBean,
-    val likes: Int = 0
+    val likes: Int = 0,
+    val type: GraphicCardType = GraphicCardType.Graphic
 )
+
+enum class GraphicCardType() {
+    Graphic, // 图文类型
+    Video, // 视频类型
+}

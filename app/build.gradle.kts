@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.venus.xiaohongshu"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.venus.xiaohongshu"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -82,4 +82,20 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     implementation("io.coil-kt.coil3:coil-compose:3.0.3")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.3")
+    // 基础依赖包，必须要依赖
+    implementation("com.geyifeng.immersionbar:immersionbar:3.2.2")
+    // kotlin扩展（可选）
+    implementation("com.geyifeng.immersionbar:immersionbar-ktx:3.2.2")
+    // fragment快速实现（可选）已废弃
+    implementation("com.geyifeng.immersionbar:immersionbar-components:3.2.2")
+    
+    implementation("androidx.media3:media3-exoplayer:1.5.0")
+    implementation("androidx.media3:media3-exoplayer-dash:1.5.0")
+    implementation("androidx.media3:media3-ui:1.5.0")
+
+    val cameraxVersion = "1.5.0-alpha03"
+    implementation ("androidx.camera:camera-core:${cameraxVersion}")
+    implementation ("androidx.camera:camera-camera2:${cameraxVersion}")
+    implementation ("androidx.camera:camera-view:${cameraxVersion}")
+    implementation ("androidx.camera:camera-lifecycle:$cameraxVersion")
 }
