@@ -49,42 +49,44 @@ fun AlbumPage(
             .padding(top = topPadding)
     ) { 
         AlbumTopBar()
-        
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(3)
-        ) { 
-            itemsIndexed(items = vm.albumController.albumList) { index, item ->
-                var selected by remember {
-                    mutableStateOf(false)
-                }
-                Box(
-                    modifier = Modifier.fillMaxWidth()
-                        .aspectRatio(1f)
-                        .padding(1.dp),
-                     contentAlignment = Alignment.TopEnd
-                ) {
-                    AsyncImage(
-                        model = item,
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop
-                    )
-                    RadioButton(
-                        selected = selected,
-                        onClick = {
-                            selected = !selected
-                            if (selected) {
-                                vm.addSelect(item)
-                            } else {
-                                vm.removeSelect(item)
-                            }
-                        },
-                        colors = RadioButtonDefaults.colors(
-                            selectedColor = colorResource(R.color.theme_red),
-                            unselectedColor = colorResource(R.color.theme_text_gray)
+
+        vm.albumController?.let {
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(3)
+            ) {
+                itemsIndexed(items = it.albumList) { index, item ->
+                    var selected by remember {
+                        mutableStateOf(false)
+                    }
+                    Box(
+                        modifier = Modifier.fillMaxWidth()
+                            .aspectRatio(1f)
+                            .padding(1.dp),
+                        contentAlignment = Alignment.TopEnd
+                    ) {
+                        AsyncImage(
+                            model = item,
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop
                         )
-                    )
+                        RadioButton(
+                            selected = selected,
+                            onClick = {
+                                selected = !selected
+                                if (selected) {
+                                    vm.addSelect(item)
+                                } else {
+                                    vm.removeSelect(item)
+                                }
+                            },
+                            colors = RadioButtonDefaults.colors(
+                                selectedColor = colorResource(R.color.theme_red),
+                                unselectedColor = colorResource(R.color.theme_text_gray)
+                            )
+                        )
+                    }
+
                 }
-                
             }
         }
     }

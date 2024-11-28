@@ -13,9 +13,9 @@ import kotlinx.coroutines.launch
  * @Author: HuaJ1a
  * @Date: 2024/11/27
  */
-class PublishViewModel(): ViewModel() {
+class PublishViewModel: ViewModel() {
     
-    lateinit var albumController: AlbumController
+    var albumController: AlbumController? = null
     val albumSelectList = MutableLiveData<MutableList<String>>() // 照片选择
     
     fun init(context: Context) {
